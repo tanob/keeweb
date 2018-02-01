@@ -147,6 +147,7 @@ _.extend(StorageBase.prototype, {
             .replace('{url}', encodeURIComponent(this._getOauthRedirectUrl()));
         this.logger.debug('OAuth: popup opened');
         const popupWindow = this._openPopup(url, 'OAuth', opts.width, opts.height);
+        this.logger.debug('popup window', popupWindow);
         if (!popupWindow) {
             return callback('OAuth: cannot open popup');
         }
